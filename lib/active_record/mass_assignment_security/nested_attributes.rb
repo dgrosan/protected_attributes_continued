@@ -78,7 +78,7 @@ module ActiveRecord
         
         unless attributes_collection.is_a?(Hash) || attributes_collection.is_a?(Array)
           attributes_collection = attributes_collection.to_h
-          raise ArgumentError, "Hash or Array expected, got #{attributes_collection.class.name} (#{attributes_collection.inspect})"
+          # raise ArgumentError, "Hash or Array expected, got #{attributes_collection.class.name} (#{attributes_collection.inspect})"
         end
 
         if limit = options[:limit]
