@@ -77,6 +77,7 @@ module ActiveRecord
         options = self.nested_attributes_options[association_name]
         
         unless attributes_collection.is_a?(Hash) || attributes_collection.is_a?(Array)
+          attributes_collection.permit!
           attributes_collection = attributes_collection.to_h
           # raise ArgumentError, "Hash or Array expected, got #{attributes_collection.class.name} (#{attributes_collection.inspect})"
         end
